@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+ 
+
+  <body>
+
+    <header>
+      <img src="logo.png" alt="logo" class="img" />
+      <!-- Logo image -->
+  
+      <nav>
+        <!-- Navigation links -->
+        <a href="file:///C:/Web%20Devepoment%20lec%20notes/home.html">Home</a>
+        <a href="#">Gallery</a>
+        <a href="#">Shop</a>
+        <a href="file:///C:/Web%20Devepoment%20lec%20notes/feedback.html">Feedback</a>
+        <a href="team.html">Team</a>
+        <a href="/profile.html">Profile</a>
+        
+      </nav>
+    </header>
+
+
+    <section class="profile-container">
+      <div class="profile-builder">
+        <div class="profile-title">
+          <h2>Create your profile</h2>
+          <p>Enter your personal information and complete the profile.</p>
+        </div>
+        <div id="progress-bar-container">
+          <div id="progress-bar"></div>
+        </div>
+        <div class="progress-value">
+          <p>Completion progress:</p>
+          <div id="progressPercentage"></div>
+        </div>
+        <div id="prompts"></div>
+        <button
+          class="primary-btn"
+          type="submit"
+          id="nextBtn"
+          onclick="nextPrompt()"
+        >
+          Next
+        </button>
+        <button 
+        class="secondary-btn" 
+        id="skipBtn" 
+        onclick="skipPrompt()">
+          Skip
+        </button>
+      </div>
+      <!-- output -->
+      <div id="editForm" style="display: none">
+        <input type="text" id="editInput" />
+        <button onclick="submitEdit()">Submit</button>
+      </div>
+      <div id="profileOutput"></div>
+    </section>
+
+    <footer>
+      <div class="footer-logo">
+        <img src="logo.png" alt="logo" class="img" />
+        <p>Working with the aim to achieve universal health coverage.</p>
+      </div>
+
+      <div id="about-topic" class="footer-topic">
+        About
+        <div class="footer-subtopic" id="portfolio">Portfolio</div>
+        <div class="footer-subtopic" id="sitemap">Sitemap</div>
+        <div class="footer-subtopic" id="team">Team</div>
+        <div class="footer-subtopic" id="editor">Editor</div>
+      </div>
+
+      <div class="footer-topic">
+        Contact
+        <div class="footer-subtopic">Email: contact@healthcore.com</div>
+        <div class="footer-subtopic">Phone: +94766227677</div>
+        <div class="footer-subtopic">
+          Address: 158/23 Main St, Battaramulla, Sri Lanka
+        </div>
+      </div>
+
+      <div id="support-topic" class="footer-topic">
+        Support
+        <div class="footer-subtopic" id="privacy-policy">Privacy & Policy</div>
+        <div class="footer-subtopic" id="terms-of-service">
+          Terms of Service
+        </div>
+        <div class="footer-subtopic" id="faq">FAQ</div>
+      </div>
+
+      <div class="footer-copyright">
+        &copy; 2024 HealthCore. All rights reserved.
+      </div>
+         
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Navigation active link highlighting script -->
+    <script>
+      const currentPage = window.location.pathname.split("/").pop(); // Get the current page's filename
+
+      const navLinks = document.querySelectorAll("nav a"); // Get all navigation links
+
+      navLinks.forEach((link) => {
+        // Add 'active' class to the link that matches the current page's filename
+        if (link.getAttribute("href").endsWith(currentPage)) {
+          link.classList.add("active");
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the footer topics
+        const portfolio = document.getElementById("portfolio");
+        const sitemap = document.getElementById("sitemap");
+        const privacyPolicy = document.getElementById("privacy-policy");
+        const termsOfService = document.getElementById("terms-of-service");
+        const faq = document.getElementById("faq");
+        const team = document.getElementById("team");
+        const editor = document.getElementById("editor");
+
+        // Add click event listeners to redirect to the relevant pages
+        portfolio.addEventListener("click", function () {
+          window.location.href = "/profile.html";
+        });
+
+        sitemap.addEventListener("click", function () {
+          window.location.href = "sitemap_page_url";
+        });
+
+        team.addEventListener("click", function () {
+          window.location.href = "team.html";
+        });
+
+        privacyPolicy.addEventListener("click", function () {
+          window.location.href = "privacy_policy_page_url";
+        });
+
+        termsOfService.addEventListener("click", function () {
+          window.location.href = "terms_of_service_page_url";
+        });
+
+        faq.addEventListener("click", function () {
+          window.location.href = "faq_page_url";
+        });
+
+        editor.addEventListener("click", function () {
+          window.location.href = "page-editor.html";
+        });
+        
+      });
+    </script>
+  </body>
+</html>

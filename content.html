@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>content</title>
+  <style>
+    #content-text{
+      text-align: left;
+      top: 5%;
+      font-size: 20px;
+      font-family: "Lato", sans-serif;
+
+    }
+    #content-img{
+      align-self: flex-end;
+      width: 40%;
+    }
+    body{
+      background-color: aquamarine;
+    }
+    #content{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    #content-h2{
+      text-align: center;
+      font-size: 30px;
+      font-family: "Lato", sans-serif;
+      margin-top: 100px;
+    }
+    /* Header styles */
+header {
+	
+  display: flex;												
+  align-items: center;
+  width: 50%;
+  background-color: black;
+  color: white;
+  padding: 10px; 											
+  box-sizing: border-box;
+position: fixed;
+  top: 0;
+  left: 0;          
+  z-index: 1000;
+  height: 77px;
+}
+nav {
+  display: flex;
+  justify-content: right;
+  background-color: black;
+  padding: 15px;
+  box-sizing: border-box;
+width: 50%;
+position:fixed;
+z-index: 1000; 
+top: 0;
+left: 50%;
+height: 77px;
+}
+
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+position: relative;
+}
+
+nav a::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0;
+height: 2px;
+background-color: white;
+                                 
+transition: width 0.5s ease;                         
+}
+
+
+nav a:active::after {
+width: 100%;                                                  
+}
+
+nav a:hover {
+  background-color: #555; 
+}
+
+nav a.active {
+border-bottom: 2px solid white; 
+}
+.img{
+	
+	width:200px;
+	height:80px;
+	z-index: 1001;
+}
+
+  </style>
+  
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="logo" class="img" />
+    <!-- Logo image -->
+
+    <nav>
+      <!-- Navigation links -->
+      <a href="file:///C:/Web%20Devepoment%20lec%20notes/home.html">Home</a>
+      <a href="#">Gallery</a>
+      <a href="#">Shop</a>
+      <a href="file:///C:/Web%20Devepoment%20lec%20notes/feedback.html">Feedback</a>
+      <a href="team.html">Team</a>
+      <a href="/profile.html">Profile</a>
+      
+    </nav>
+  </header>
+
+  <h2 id="content-h2">Mental health</h2>
+  <div id="content">
+  <p id="content-text">This comprehensive guide to understanding mental health provides an in-depth understanding of the topic,<br> including
+    its definition, common disorders, coping strategies, and resources for seeking help.<br> Mental health refers to an
+    individual's emotional, psychological, and social well-being, enabling them to cope with stress,<br> work productively,
+    and contribute to their communities. Common mental health disorders include anxiety disorders,<br> depression, bipolar
+    disorder, schizophrenia, and obsessive-compulsive disorder (OCD). To cope, <br>individuals should seek professional
+    help, practice self-care, build a support system, maintain a healthy lifestyle,<br> and practice mindfulness. Seeking
+    help is essential, and resources like the National Suicide Prevention Lifeline,<br> Crisis Text Line, and SAMHSA
+    National Helpline can provide personalized support and treatment options.</p>
+<img src="download.jpg" id="content-img" alt="mental">
+  </div>
+  
+   <!-- Navigation active link highlighting script -->
+   <script>
+    const currentPage = window.location.pathname.split("/").pop(); // Get the current page's filename
+
+    const navLinks = document.querySelectorAll("nav a"); // Get all navigation links
+
+    navLinks.forEach((link) => {
+      // Add 'active' class to the link that matches the current page's filename
+      if (link.getAttribute("href").endsWith(currentPage)) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+
+</body>
+</html>
